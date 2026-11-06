@@ -1,3 +1,3 @@
 #!/bin/sh
 set -eux
-coq_makefile -f _CoqProject -o Makefile
+rocq makefile -f _RocqProject -o Makefile

@@ -1,4 +1,4 @@
-# The Result Data Structure for Coq
+# The Result Data Structure for Rocq
 
 ## coqdoc
-https://proof-ninja.github.io/coq-result/
+https://proof-ninja.github.io/rocq-result/
