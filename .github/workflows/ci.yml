@@ -2,7 +2,7 @@ name: Build and publish documentation
 
 on:
   push:
-    branches: ['**']
+    branches: ['master']
   pull_request:
   workflow_dispatch:
 
@@ -11,7 +11,12 @@ permissions:
 
 jobs:
   build:
+    name: Build (Rocq ${{ matrix.rocq-version }})
     runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        rocq-version: ['9.1', '9.2', '9.3']
     steps:
       - uses: actions/checkout@v6
         with:
@@ -19,7 +24,7 @@ jobs:
       - name: Build library and coqdoc
         uses: rocq-community/docker-coq-action@v1
         with:
-          coq_version: '9.1'
+          coq_version: ${{ matrix.rocq-version }}
           custom_script: |
             sudo chown -R "$(id -u):$(id -g)" .
             ./configure.sh
@@ -27,7 +32,7 @@ jobs:
             make html
             test -f html/index.html
       - name: Upload documentation
-        if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+        if: matrix.rocq-version == '9.3' && github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v5
         with:
           path: html
