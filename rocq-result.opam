@@ -10,12 +10,12 @@ authors: [
   "ymoymoon"
   ]
 
-homepage: "https://proof-ninja.co.jp/"
-bug-reports: "https://proof-ninja.co.jp/rocq-result/issues"
-dev-repo: "git+https://proof-ninja.co.jp/rocq-result.git"
+homepage:    "https://github.com/proof-ninja/rocq-result"
+bug-reports: "https://github.com/proof-ninja/rocq-result/issues"
+dev-repo:    "git+https://github.com/proof-ninja/rocq-result.git"
 
 depends: [
-  "rocq-core" {>= "9.1" & < "9.2"}
+  "rocq-core" {>= "9.1"}
 ]
 build: [
   ["./configure.sh"]
