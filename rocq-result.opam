@@ -9,6 +9,7 @@ authors: [
   "Yoshihiro Imai <y.imai@proof-ninja.co.jp>"
   "ymoymoon"
   ]
+license: "MIT"
 
 homepage:    "https://github.com/proof-ninja/rocq-result"
 bug-reports: "https://github.com/proof-ninja/rocq-result/issues"

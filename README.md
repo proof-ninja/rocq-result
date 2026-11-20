@@ -16,3 +16,7 @@ From Result Require Import Result.
 
 ## coqdoc
 https://proof-ninja.github.io/rocq-result/
+
+## License
+
+MIT. See [LICENSE](LICENSE).
