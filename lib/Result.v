@@ -5,7 +5,6 @@ Inductive result (A E: Set) :=
 Arguments Ok [A E].
 Arguments Error [A E].
 
-
 (** Return the successful value, or [default] if the result is an error. *)
 Definition value {A E : Set} (r : result A E) (default : A) : A :=
   match r with
